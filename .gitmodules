@@ -1,0 +1,3 @@
+[submodule "SeaStars/logutils/spdlog"]
+	path = SeaStars/logutils/spdlog
+	url = https://github.com/gabime/spdlog
