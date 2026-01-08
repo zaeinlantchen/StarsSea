@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/SeaStars/SeaStars/src/SeaStars",
-      "program": "e:/SeaStars/SeaStars/src/SeaStars/build/Debug/outDebug",
+      "cwd": "e:/StarsSea/StarsSea/src/StarsSea",
+      "program": "e:/StarsSea/StarsSea/src/StarsSea/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

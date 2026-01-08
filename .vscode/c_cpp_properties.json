@@ -17,12 +17,17 @@
       "name": "windows-msvc-x64",
       "includePath": [
         "${workspaceFolder}/**",
-        "${workspaceFolder}/SeaStars/src"
+        "${workspaceFolder}/SeaStars/src",
+        "${workspaceFolder}/SeaStars/logutils/spdlog/include"
       ],
       "compilerPath": "cl.exe",
       "cStandard": "c17",
       "cppStandard": "c++17",
       "intelliSenseMode": "windows-msvc-x64",
+      "defines": [
+        "STARSSEA_PLATFORM_WINDOWS",
+        "STARSSEA_BUILD_DLL"
+      ],
       "compilerArgs": []
     }
   ],

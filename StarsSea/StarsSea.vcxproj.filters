@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="StarsSea">
+      <UniqueIdentifier>{EBA202E1-D76F-5DEC-0089-4B94ECB4927A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarsSeaEvents">
+      <UniqueIdentifier>{A06B2EC8-8C39-22CE-75CD-92F4613AFE32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\StarsSea-pch.h" />
+    <ClInclude Include="src\StarsSea.h" />
+    <ClInclude Include="src\StarsSea\ApplicationStarsSea.h">
+      <Filter>StarsSea</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSea\Log.h">
+      <Filter>StarsSea</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSea\StarSea-Core.h">
+      <Filter>StarsSea</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSea\StarsSea-EntryPoint.h">
+      <Filter>StarsSea</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSeaEvents\ApplicationEvent.h">
+      <Filter>StarsSeaEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSeaEvents\StarsSea-Event.h">
+      <Filter>StarsSeaEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSeaEvents\StarsSea-KeyEvent.h">
+      <Filter>StarsSeaEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSeaEvents\StarsSea-MouseEvent.h">
+      <Filter>StarsSeaEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSea\StarsSea-Window.h" />
+    <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\StarsSea-pch.cpp" />
+    <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp">
+      <Filter>StarsSea</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StarsSea\Log.cpp">
+      <Filter>StarsSea</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp" />
+  </ItemGroup>
+</Project>
