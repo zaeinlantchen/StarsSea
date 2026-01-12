@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../StarsSea-pch.h"
 
 #include "StarSea-Core.h"
 #include "spdlog/spdlog.h"

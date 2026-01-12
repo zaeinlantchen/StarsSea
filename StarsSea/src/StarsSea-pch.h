@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "StarsSea/log.h"
+
 #ifdef STARSSEAPLATFORMWINDOWS
 	#include <Windows.h>
 #endif

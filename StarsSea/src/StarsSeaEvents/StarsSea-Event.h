@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../StarsSea-pch.h"
+
 #include "../StarsSea/StarSea-Core.h"
 
 namespace StarsSea {

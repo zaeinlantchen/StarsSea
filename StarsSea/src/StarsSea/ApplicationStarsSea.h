@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../StarsSea-pch.h"
+
 #include "StarSea-Core.h"
 #include "../StarsSeaEvents/StarsSea-Event.h"
 #include "StarsSea-Window.h"

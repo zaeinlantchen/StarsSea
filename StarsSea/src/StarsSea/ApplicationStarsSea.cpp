@@ -1,11 +1,10 @@
-#include "../StarsSea-pch.h"
-
 #include "ApplicationStarsSea.h"
 
 #include "../StarsSeaEvents/ApplicationEvent.h"
 #include "Log.h"
 
 #include <GLFW/glfw3.h>
+#include <GL/gl.h>
 
 namespace StarsSea{
 	ApplicationStarsSea::ApplicationStarsSea()

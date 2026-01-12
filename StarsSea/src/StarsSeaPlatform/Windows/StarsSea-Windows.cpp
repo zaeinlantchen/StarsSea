@@ -1,6 +1,5 @@
-#include "../../StarsSea-pch.h"
-
 #include "StarsSea-Windows.h"
+#include "../../StarsSea/Log.h"
 
 namespace StarsSea{
 	
@@ -23,11 +22,11 @@ namespace StarsSea{
 
 	void StarsSeaWindows::Init(const WindowPrps& props)
 	{
-		starsseaDate.Title = props.Title;
-		starsseaDate.Width = props.Width;
-		starsseaDate.Height = props.Height;
+		starsseaData.Title = props.Title;
+		starsseaData.Width = props.Width;
+		starsseaData.Height = props.Height;
 
-		STARSEAINFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		STARSEACOREINFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!starsseaGLFWInitialized)
 		{
@@ -36,9 +35,9 @@ namespace StarsSea{
 			starsseaGLFWInitialized = true;
 		}
 
-		StarsSeaWindow = glfwCreateWindow((int)props.Width, (int)props.Height, starsseaDate.Title.c_str(), nullptr, nullptr);
+		StarsSeaWindow = glfwCreateWindow((int)props.Width, (int)props.Height, starsseaData.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(StarsSeaWindow);
-		glfwSetWindowUserPointer(StarsSeaWindow, &starsseaDate);
+		glfwSetWindowUserPointer(StarsSeaWindow, &starsseaData);
 		SetVSync(true);
 	}
 
@@ -59,11 +58,11 @@ namespace StarsSea{
 			glfwSwapInterval(1);
 		else
 			glfwSwapInterval(0);
-		starsseaDate.VSync = enabled;
+		starsseaData.VSync = enabled;
 	}
 
 	bool StarsSeaWindows::IsVSync() const
 	{
-		return starsseaDate.VSync;
+		return starsseaData.VSync;
 	}
 }

@@ -1,10 +1,12 @@
 #pragma once
 
+#include "../../StarsSea-pch.h"
+
 #include "../../StarsSea/StarsSea-Window.h"
 
 #include <GLFW/glfw3.h>
 
-namespace StarSea{
+namespace StarsSea{
 
 	class StarsSeaWindows : public Window
 	{

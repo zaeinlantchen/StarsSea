@@ -1,8 +1,8 @@
 #pragma once
 
-#include "StarsSea-Event.h"
-
 #include "../StarsSea-pch.h"
+
+#include "StarsSea-Event.h"
 
 namespace StarsSea {
 	class STARSSEAAPI WindowResizeEvent : public Event

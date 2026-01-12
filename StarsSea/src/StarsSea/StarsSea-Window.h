@@ -1,11 +1,9 @@
 #pragma once
 
-#include "../StarsSea-pch.h"
-
 #include "StarSea-Core.h"
 #include "../StarsSeaEvents/StarsSea-Event.h"
 
-namespace StarSea{
+namespace StarsSea{
 	struct WindowPrps
 	{
 		std::string Title;

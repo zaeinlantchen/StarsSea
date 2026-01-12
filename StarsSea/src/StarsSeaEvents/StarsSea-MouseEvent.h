@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../StarsSea-pch.h"
+
 #include "StarsSea-Event.h"
 
 namespace StarsSea {

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../StarsSea-pch.h"
+
 #ifdef STARSSEAPLATFORMWINDOWS
 	#ifdef STARSSEABUILDDLL
 		#define STARSSEAAPI __declspec(dllexport)
