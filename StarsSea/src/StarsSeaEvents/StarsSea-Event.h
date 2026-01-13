@@ -56,12 +56,12 @@ namespace StarsSea {
 		{
 		}
 
-		template<typename T, typename F>
+		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
 			if (starseaEvent.GetEventType() == T::GetStaticType())
 			{
-				starseaEvent.Handled = func(*(T*)&starseaEvent);
+				starseaEvent.starseaHandled = func(*(T*)&starseaEvent);
 				return true;
 			}
 			return false;
