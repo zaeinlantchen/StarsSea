@@ -15,8 +15,8 @@ namespace StarsSea{
 	{
 		starsseaWindow = std::unique_ptr<Window>(Window::Create());
 		starsseaWindow->SetEventCallback(BINDEVENTFN(OnEvent));
-		
-		unsigned int id = 0;
+
+		unsigned int id;
 		glGenVertexArrays(1, &id);
 	}
 	ApplicationStarsSea::~ApplicationStarsSea()

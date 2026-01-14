@@ -46,20 +46,10 @@ namespace StarsSea{
 			starsseaGLFWInitialized = true;
 		}
 
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
 		StarsSeaWindow = glfwCreateWindow((int)props.Width, (int)props.Height, starsseaData.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(StarsSeaWindow);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		STARSEACOREASSERT(status, "Could not initialize Glad!");
-		
-		STARSEACOREINFO("OpenGL Info:");
-		STARSEACOREINFO("  Vendor: {0}", (const char*)glGetString(GL_VENDOR));
-		STARSEACOREINFO("  Renderer: {0}", (const char*)glGetString(GL_RENDERER));
-		STARSEACOREINFO("  Version: {0}", (const char*)glGetString(GL_VERSION));
-
 		glfwSetWindowUserPointer(StarsSeaWindow, &starsseaData);
 		SetVSync(true);
 
