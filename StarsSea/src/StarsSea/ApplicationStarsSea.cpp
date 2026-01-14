@@ -4,8 +4,7 @@
 #include "../StarsSeaEvents/StarsSea-Event.h"
 #include "Log.h"
 
-#include <GLFW/glfw3.h>
-#include <GL/gl.h>
+#include <glad/glad.h>
 #include "../StarsSea-pch.h"
 
 namespace StarsSea{
@@ -16,6 +15,9 @@ namespace StarsSea{
 	{
 		starsseaWindow = std::unique_ptr<Window>(Window::Create());
 		starsseaWindow->SetEventCallback(BINDEVENTFN(OnEvent));
+		
+		unsigned int id = 0;
+		glGenVertexArrays(1, &id);
 	}
 	ApplicationStarsSea::~ApplicationStarsSea()
 	{

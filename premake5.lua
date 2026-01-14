@@ -15,7 +15,9 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "StarsSea/utils/GLFW/include"
+IncludeDir["Glad"] = "StarsSea/utils/Glad/include"
 include "StarsSea/utils/GLFW/premake5.lua"
+include "StarsSea/utils/Glad/premake5.lua"
 
 project "StarsSea"
 	location "StarsSea"
@@ -33,11 +35,13 @@ project "StarsSea"
 	includedirs{
 		"%{prj.name}/src",
 		"%{prj.name}/utils/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -49,7 +53,8 @@ project "StarsSea"
 
 		defines{
 			"STARSSEAPLATFORMWINDOWS",
-			"STARSSEABUILDDLL"
+			"STARSSEABUILDDLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 	postbuildcommands{
