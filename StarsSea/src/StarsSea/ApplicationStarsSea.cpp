@@ -21,11 +21,30 @@ namespace StarsSea{
 	{
 	}
 
+	void ApplicationStarsSea::PushLayer(Layer* layer)
+	{
+		starseaLayerStack.PushLayer(layer);
+		layer->OnAttach();
+	}
+
+	void ApplicationStarsSea::PushOverlay(Layer* overlay)
+	{
+		starseaLayerStack.PushOverlay(overlay);
+		overlay->OnAttach();
+	}
+
 	void ApplicationStarsSea::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BINDEVENTFN(OnWindowClose));
-		STARSEACOREINFO("{0}", e.ToString());
+		/*STARSEACOREINFO("{0}", e.ToString());*/
+
+		for (auto it = starseaLayerStack.end(); it != starseaLayerStack.begin();) {
+			(*--it)->OnEvent(e);
+			if (e.starseaHandled)
+				break;
+		}
+
 	}
 
 
@@ -34,6 +53,11 @@ namespace StarsSea{
 		while (starsseaRunning) {
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			for (Layer* layer : starseaLayerStack) {
+				layer->OnUpdate();
+			}
+
 			starsseaWindow->OnUpdate();
 		};
 	}

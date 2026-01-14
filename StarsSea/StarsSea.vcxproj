@@ -143,7 +143,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -166,7 +166,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -192,7 +192,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -219,7 +219,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -246,7 +246,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -273,7 +273,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -291,22 +291,26 @@
   <ItemGroup>
     <ClInclude Include="src\StarsSea-pch.h" />
     <ClInclude Include="src\StarsSea.h" />
-    <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h" />
     <ClInclude Include="src\StarsSea\ApplicationStarsSea.h" />
     <ClInclude Include="src\StarsSea\Log.h" />
     <ClInclude Include="src\StarsSea\StarSea-Core.h" />
     <ClInclude Include="src\StarsSea\StarsSea-EntryPoint.h" />
+    <ClInclude Include="src\StarsSea\StarsSea-Window.h" />
     <ClInclude Include="src\StarsSeaEvents\ApplicationEvent.h" />
     <ClInclude Include="src\StarsSeaEvents\StarsSea-Event.h" />
     <ClInclude Include="src\StarsSeaEvents\StarsSea-KeyEvent.h" />
     <ClInclude Include="src\StarsSeaEvents\StarsSea-MouseEvent.h" />
-    <ClInclude Include="src\StarsSea\StarsSea-Window.h" />
+    <ClInclude Include="src\StarsSeaLayers\StarsSea-Layer.h" />
+    <ClInclude Include="src\StarsSeaLayers\StarsSea-LayerStack.h" />
+    <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\StarsSea-pch.cpp" />
-    <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp" />
     <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp" />
     <ClCompile Include="src\StarsSea\Log.cpp" />
+    <ClCompile Include="src\StarsSeaLayers\StarsSea-Layer.cpp" />
+    <ClCompile Include="src\StarsSeaLayers\StarsSea-LayerStack.cpp" />
+    <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="utils\GLFW\GLFW.vcxproj">

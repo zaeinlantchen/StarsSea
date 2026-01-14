@@ -42,8 +42,9 @@ namespace StarsSea {
 		{
 			return GetCategoryFlags() & category;
 		}
-	private:
 		bool starseaHandled = false;
+	private:
+		
 	};
 
 	class EventDispatcher

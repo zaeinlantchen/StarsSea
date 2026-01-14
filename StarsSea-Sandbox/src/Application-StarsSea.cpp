@@ -2,23 +2,40 @@
 
 #include "StarsSea/StarsSea-EntryPoint.h"
 
-class StarsSeaSandbox : public StarsSea::ApplicationStarsSea
+class ExampleLayer : public StarsSea::Layer
 {
 public:
-	StarsSeaSandbox();
-	~StarsSeaSandbox();
+	ExampleLayer() 
+		: StarsSea::Layer("Example Layer") {
+
+	}
+	
+	void OnUpdate() override {
+		STARSEAINFO("ExampleLayer::OnUpdate");
+	}
+
+	void OnEvent(StarsSea::Event& event) override {
+		STARSEATRACE("ExampleLayer::OnEvent {0}", event.ToString());
+	}
 
 private:
 
 };
 
-StarsSeaSandbox::StarsSeaSandbox()
-{
-}
 
-StarsSeaSandbox::~StarsSeaSandbox()
+class StarsSeaSandbox : public StarsSea::ApplicationStarsSea
 {
-}
+public:
+	StarsSeaSandbox() {
+		PushLayer(new ExampleLayer());
+	}
+	~StarsSeaSandbox() {
+
+	}
+
+private:
+
+};
 
 StarsSea::ApplicationStarsSea* StarsSea::CreateApplication()
 {

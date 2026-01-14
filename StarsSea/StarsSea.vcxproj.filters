@@ -7,6 +7,15 @@
     <Filter Include="StarsSeaEvents">
       <UniqueIdentifier>{A06B2EC8-8C39-22CE-75CD-92F4613AFE32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StarsSeaLayers">
+      <UniqueIdentifier>{7B5611D7-6724-05DD-50B8-75033C25E141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarsSeaPlatform">
+      <UniqueIdentifier>{10DB95A9-FCD3-B4FB-2506-9A80115E9407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarsSeaPlatform\Windows">
+      <UniqueIdentifier>{4A9515B1-36BA-6431-5F05-4AC14B89634F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\StarsSea-pch.h" />
@@ -23,6 +32,9 @@
     <ClInclude Include="src\StarsSea\StarsSea-EntryPoint.h">
       <Filter>StarsSea</Filter>
     </ClInclude>
+    <ClInclude Include="src\StarsSea\StarsSea-Window.h">
+      <Filter>StarsSea</Filter>
+    </ClInclude>
     <ClInclude Include="src\StarsSeaEvents\ApplicationEvent.h">
       <Filter>StarsSeaEvents</Filter>
     </ClInclude>
@@ -35,8 +47,15 @@
     <ClInclude Include="src\StarsSeaEvents\StarsSea-MouseEvent.h">
       <Filter>StarsSeaEvents</Filter>
     </ClInclude>
-    <ClInclude Include="src\StarsSea\StarsSea-Window.h" />
-    <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h" />
+    <ClInclude Include="src\StarsSeaLayers\StarsSea-Layer.h">
+      <Filter>StarsSeaLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSeaLayers\StarsSea-LayerStack.h">
+      <Filter>StarsSeaLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h">
+      <Filter>StarsSeaPlatform\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\StarsSea-pch.cpp" />
@@ -46,6 +65,14 @@
     <ClCompile Include="src\StarsSea\Log.cpp">
       <Filter>StarsSea</Filter>
     </ClCompile>
-    <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp" />
+    <ClCompile Include="src\StarsSeaLayers\StarsSea-Layer.cpp">
+      <Filter>StarsSeaLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StarsSeaLayers\StarsSea-LayerStack.cpp">
+      <Filter>StarsSeaLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp">
+      <Filter>StarsSeaPlatform\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
