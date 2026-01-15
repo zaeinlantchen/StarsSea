@@ -1,0 +1,3 @@
+[submodule "StarsSea/utils/imgui"]
+	path = StarsSea/utils/imgui
+	url = https://github.com/TheCherno/imgui
