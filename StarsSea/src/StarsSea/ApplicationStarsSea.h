@@ -24,11 +24,17 @@ namespace StarsSea{
 
 			void PushLayer(Layer* layer);
 			void PushOverlay(Layer* overlay);
+
+			inline static ApplicationStarsSea& Get() { return *starseaInstance; }
+
+			inline Window& GetWindow() { return *starsseaWindow; }
 		private:
 			bool OnWindowClose(WindowCloseEvent& e);
 			std::unique_ptr<class Window> starsseaWindow;
 			bool starsseaRunning = true;
 			LayerStack starseaLayerStack;
+		private:
+			static ApplicationStarsSea* starseaInstance;
 	};
 	ApplicationStarsSea* CreateApplication();
 

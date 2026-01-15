@@ -28,6 +28,7 @@ class StarsSeaSandbox : public StarsSea::ApplicationStarsSea
 public:
 	StarsSeaSandbox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new StarsSea::StarsSeaImGuiLayer());
 	}
 	~StarsSeaSandbox() {
 

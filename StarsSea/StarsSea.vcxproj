@@ -139,7 +139,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -162,7 +162,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -185,7 +185,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEARELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -212,7 +212,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEARELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -239,7 +239,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -266,7 +266,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -289,6 +289,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ImGui\StarsSea-ImGuiLayer.h" />
     <ClInclude Include="src\StarsSea-pch.h" />
     <ClInclude Include="src\StarsSea.h" />
     <ClInclude Include="src\StarsSea\ApplicationStarsSea.h" />
@@ -302,14 +303,17 @@
     <ClInclude Include="src\StarsSeaEvents\StarsSea-MouseEvent.h" />
     <ClInclude Include="src\StarsSeaLayers\StarsSea-Layer.h" />
     <ClInclude Include="src\StarsSeaLayers\StarsSea-LayerStack.h" />
+    <ClInclude Include="src\StarsSeaPlatform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ImGui\StarsSea-ImGuiLayer.cpp" />
     <ClCompile Include="src\StarsSea-pch.cpp" />
     <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp" />
     <ClCompile Include="src\StarsSea\Log.cpp" />
     <ClCompile Include="src\StarsSeaLayers\StarsSea-Layer.cpp" />
     <ClCompile Include="src\StarsSeaLayers\StarsSea-LayerStack.cpp" />
+    <ClCompile Include="src\StarsSeaPlatform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -318,6 +322,9 @@
     </ProjectReference>
     <ProjectReference Include="utils\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="utils\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

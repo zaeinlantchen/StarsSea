@@ -11,13 +11,14 @@ namespace StarsSea{
 
 #define BINDEVENTFN(x) std::bind(&ApplicationStarsSea::x, this, std::placeholders::_1)
 
+	ApplicationStarsSea* ApplicationStarsSea::starseaInstance = nullptr;
+
 	ApplicationStarsSea::ApplicationStarsSea()
 	{
+		STARSEACOREASSERT(!starsseaInstance, "ApplicationStarsSea already exists!");
+		starseaInstance = this;
 		starsseaWindow = std::unique_ptr<Window>(Window::Create());
 		starsseaWindow->SetEventCallback(BINDEVENTFN(OnEvent));
-
-		unsigned int id;
-		glGenVertexArrays(1, &id);
 	}
 	ApplicationStarsSea::~ApplicationStarsSea()
 	{

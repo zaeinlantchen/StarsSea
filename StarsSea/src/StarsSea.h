@@ -6,6 +6,8 @@
 #include "StarsSeaLayers/StarsSea-Layer.h"
 #include "StarsSea/Log.h"
 
+#include "ImGui/StarsSea-ImGuiLayer.h"
+
 
 //----Entry Point-----------------
 #include "StarsSea/StarsSea-EntryPoint.h"

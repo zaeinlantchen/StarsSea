@@ -16,8 +16,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "StarsSea/utils/GLFW/include"
 IncludeDir["Glad"] = "StarsSea/utils/Glad/include"
+IncludeDir["ImGui"] = "StarsSea/utils/imgui"
+
 include "StarsSea/utils/GLFW/premake5.lua"
 include "StarsSea/utils/Glad/premake5.lua"
+include "StarsSea/utils/imgui/premake5.lua"
 
 project "StarsSea"
 	location "StarsSea"
@@ -36,12 +39,14 @@ project "StarsSea"
 		"%{prj.name}/src",
 		"%{prj.name}/utils/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 

@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{C0FF640D-2C14-8DBE-F595-301E616989EF}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StarsSea">
       <UniqueIdentifier>{EBA202E1-D76F-5DEC-0089-4B94ECB4927A}</UniqueIdentifier>
     </Filter>
@@ -13,11 +16,17 @@
     <Filter Include="StarsSeaPlatform">
       <UniqueIdentifier>{10DB95A9-FCD3-B4FB-2506-9A80115E9407}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StarsSeaPlatform\OpenGL">
+      <UniqueIdentifier>{44728B67-B0A9-D3FE-B9B3-3722256AFAF7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StarsSeaPlatform\Windows">
       <UniqueIdentifier>{4A9515B1-36BA-6431-5F05-4AC14B89634F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ImGui\StarsSea-ImGuiLayer.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\StarsSea-pch.h" />
     <ClInclude Include="src\StarsSea.h" />
     <ClInclude Include="src\StarsSea\ApplicationStarsSea.h">
@@ -53,11 +62,17 @@
     <ClInclude Include="src\StarsSeaLayers\StarsSea-LayerStack.h">
       <Filter>StarsSeaLayers</Filter>
     </ClInclude>
+    <ClInclude Include="src\StarsSeaPlatform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>StarsSeaPlatform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.h">
       <Filter>StarsSeaPlatform\Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ImGui\StarsSea-ImGuiLayer.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\StarsSea-pch.cpp" />
     <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp">
       <Filter>StarsSea</Filter>
@@ -70,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="src\StarsSeaLayers\StarsSea-LayerStack.cpp">
       <Filter>StarsSeaLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StarsSeaPlatform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>StarsSeaPlatform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp">
       <Filter>StarsSeaPlatform\Windows</Filter>
