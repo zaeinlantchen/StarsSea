@@ -93,6 +93,12 @@ namespace StarsSea{
 					}
 				}
 			});
+
+		glfwSetCharCallback(StarsSeaWindow, [](GLFWwindow* starsseawindow, unsigned int keycode) {
+			StarsSeaWindowData& starsseadata = *(StarsSeaWindowData*)glfwGetWindowUserPointer(starsseawindow);
+			KeyTypedEvent event(keycode);
+			starsseadata.EventCallback(event);
+			});
 		
 		glfwSetMouseButtonCallback(StarsSeaWindow, [](GLFWwindow* starsseawindow, int button, int action, int mods) {
 			StarsSeaWindowData& starsseadata = *(StarsSeaWindowData*)glfwGetWindowUserPointer(starsseawindow);

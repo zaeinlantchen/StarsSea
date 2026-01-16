@@ -51,4 +51,18 @@ namespace StarsSea {
 		}
 		EVENTCLASSTYPE(KeyReleased)
 	};
+
+	class STARSSEAAPI KeyTypedEvent : public KeyEvent
+	{
+		public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {
+		}
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << starseaKeyCode;
+			return ss.str();
+		}
+		EVENTCLASSTYPE(KeyTyped)
+	};
 }
