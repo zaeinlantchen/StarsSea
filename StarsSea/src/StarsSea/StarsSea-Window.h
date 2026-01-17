@@ -10,7 +10,7 @@ namespace StarsSea{
 		unsigned int Width;
 		unsigned int Height;
 
-		WindowPrps(const std::string& title = "StarSea Engine",
+		WindowPrps(const std::string& title = "星海核心",
 			unsigned int width = 1280,
 			unsigned int height = 720)
 			: Title(title), Width(width), Height(height)
@@ -34,6 +34,8 @@ namespace StarsSea{
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
+
+		virtual void* GetNativeWindow() const = 0;
 
 		static Window* Create(const WindowPrps& props = WindowPrps());
 	};

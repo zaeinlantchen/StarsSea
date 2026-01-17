@@ -290,8 +290,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\ImGui\StarsSea-ImGuiLayer.h" />
+    <ClInclude Include="src\StarsSea-Input\StarsSea-Input.h" />
+    <ClInclude Include="src\StarsSea-KeyCode\StarsSea-KeyCode.h" />
+    <ClInclude Include="src\StarsSea-KeyCode\StarsSea-MouseButtonCode.h" />
     <ClInclude Include="src\StarsSea-pch.h" />
     <ClInclude Include="src\StarsSea.h" />
+    <ClInclude Include="src\StarsSeaPlatform\Windows\StarsSea-WindowInput.h" />
     <ClInclude Include="src\StarsSea\ApplicationStarsSea.h" />
     <ClInclude Include="src\StarsSea\Log.h" />
     <ClInclude Include="src\StarsSea\StarSea-Core.h" />
@@ -309,6 +313,7 @@
   <ItemGroup>
     <ClCompile Include="src\ImGui\StarsSea-ImGuiLayer.cpp" />
     <ClCompile Include="src\StarsSea-pch.cpp" />
+    <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-WindowInput.cpp" />
     <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp" />
     <ClCompile Include="src\StarsSea\Log.cpp" />
     <ClCompile Include="src\StarsSeaLayers\StarsSea-Layer.cpp" />

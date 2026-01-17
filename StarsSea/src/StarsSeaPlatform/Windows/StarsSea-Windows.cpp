@@ -12,7 +12,7 @@ namespace StarsSea{
 
 	static void GLFWErrorCallback(int error, const char* description)
 	{
-		STARSEACOREERROR("GLFW Error ({0}): {1}", error, description);
+		STARSEACOREERROR("GLFW 错误 ({0}): {1}", error, description);
 	}
 
 	Window* Window::Create(const WindowPrps& props)
@@ -36,12 +36,12 @@ namespace StarsSea{
 		starsseaData.Width = props.Width;
 		starsseaData.Height = props.Height;
 
-		STARSEACOREINFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		STARSEACOREINFO("构造 {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!starsseaGLFWInitialized)
 		{
 			int success = glfwInit();
-			STARSEACOREASSERT(success, "Could not initialize GLFW!");
+			STARSEACOREASSERT(success, "GLFW 初始化失败!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			starsseaGLFWInitialized = true;
 		}
@@ -49,7 +49,7 @@ namespace StarsSea{
 		StarsSeaWindow = glfwCreateWindow((int)props.Width, (int)props.Height, starsseaData.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(StarsSeaWindow);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		STARSEACOREASSERT(status, "Could not initialize Glad!");
+		STARSEACOREASSERT(status, "GLAD 初始化失败!");
 		glfwSetWindowUserPointer(StarsSeaWindow, &starsseaData);
 		SetVSync(true);
 

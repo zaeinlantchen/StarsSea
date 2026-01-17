@@ -7,13 +7,13 @@ extern StarsSea::ApplicationStarsSea* StarsSea::CreateApplication();
 int main(int argc, char** argv) {
 
 	StarsSea::Log::Init();
+	STARSEACOREWARN("初始化日志!");
 
-	STARSEACOREWARN("Initialized Log!");
-	STARSEAINFO("Hello from App!");
+	STARSEAINFO("星海，启动!");
 
 	auto starsseasandbox = StarsSea::CreateApplication();
 	starsseasandbox->Run();
 	delete starsseasandbox;
 }
 
-#endif // 
+#endif //

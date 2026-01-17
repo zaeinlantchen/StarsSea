@@ -6,6 +6,7 @@
 
 #include <glad/glad.h>
 #include "../StarsSea-pch.h"
+#include "../StarsSea-Input/StarsSea-Input.h"
 
 namespace StarsSea{
 
@@ -15,7 +16,7 @@ namespace StarsSea{
 
 	ApplicationStarsSea::ApplicationStarsSea()
 	{
-		STARSEACOREASSERT(!starsseaInstance, "ApplicationStarsSea already exists!");
+		STARSEACOREASSERT(!starsseaInstance, "已退出星海核心！");
 		starseaInstance = this;
 		starsseaWindow = std::unique_ptr<Window>(Window::Create());
 		starsseaWindow->SetEventCallback(BINDEVENTFN(OnEvent));
@@ -60,6 +61,8 @@ namespace StarsSea{
 			for (Layer* layer : starseaLayerStack) {
 				layer->OnUpdate();
 			}
+			//auto [x, y] = StarsSeaInput::GetMousePosition();
+			//STARSEACORETRACE("{0}, {1}", x, y);
 
 			starsseaWindow->OnUpdate();
 		};

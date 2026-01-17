@@ -29,7 +29,6 @@ namespace StarsSea
 		io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
 
-		// TEMPORARY: should eventually use StarsSeaPlatformWindow to get window handle
 		io.KeyMap[ImGuiKey_Tab] = GLFW_KEY_TAB;
 		io.KeyMap[ImGuiKey_LeftArrow] = GLFW_KEY_LEFT;
 		io.KeyMap[ImGuiKey_RightArrow] = GLFW_KEY_RIGHT;

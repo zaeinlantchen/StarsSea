@@ -17,7 +17,7 @@ namespace StarsSea {
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "WindowResizeEvent: " << starseaWidth << ", " << starseaHeight;
+			ss << "窗口大小改变事件: " << starseaWidth << ", " << starseaHeight;
 			return ss.str();
 		}
 

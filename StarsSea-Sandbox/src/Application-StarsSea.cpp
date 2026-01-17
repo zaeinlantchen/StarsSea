@@ -6,16 +6,20 @@ class ExampleLayer : public StarsSea::Layer
 {
 public:
 	ExampleLayer() 
-		: StarsSea::Layer("Example Layer") {
+		: StarsSea::Layer("示例层") {
 
 	}
 	
 	void OnUpdate() override {
-		STARSEAINFO("ExampleLayer::OnUpdate");
+		if (StarsSea::StarsSeaInput::IsKeyPressed(STARSSEAKEYTAB))
+			STARSEATRACE("Tab被按下！");
 	}
 
 	void OnEvent(StarsSea::Event& event) override {
-		STARSEATRACE("ExampleLayer::OnEvent {0}", event.ToString());
+		if (event.GetEventType() == StarsSea::EventType::KeyPressed) {
+			StarsSea::KeyPressedEvent& e = (StarsSea::KeyPressedEvent&)event;
+			STARSEATRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 private:

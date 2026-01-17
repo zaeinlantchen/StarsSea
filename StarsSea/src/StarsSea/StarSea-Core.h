@@ -13,8 +13,8 @@
 #endif
 
 #ifdef STARSSEAENABLEASSERTS
-	#define STARSEAASSERT(x, ...) { if(!(x)) { STARSEAERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define STARSEACOREASSERT(x, ...) { if(!(x)) { STARSEACOREERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define STARSEAASSERT(x, ...) { if(!(x)) { STARSEAERROR("断言失败: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define STARSEACOREASSERT(x, ...) { if(!(x)) { STARSEACOREERROR("断言失败: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define STARSEAASSERT(x, ...)
 	#define STARSEACOREASSERT(x, ...)

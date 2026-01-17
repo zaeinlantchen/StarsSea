@@ -23,6 +23,9 @@ namespace StarsSea{
 			inline void SetEventCallback(const EventCallbackFn& callback) override { starsseaData.EventCallback = callback; };
 			void SetVSync(bool enabled) override;
 			bool IsVSync() const override;
+
+			inline virtual void* GetNativeWindow() const override { return StarsSeaWindow; }
+
 		private:
 			virtual void Init(const WindowPrps& props);
 			virtual void Shutdown();

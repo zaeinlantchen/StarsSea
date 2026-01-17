@@ -14,6 +14,12 @@
 
 #include "StarsSea/log.h"
 
+#ifdef _WIN32
+#include <windows.h>
+#include <io.h>
+#include <fcntl.h>
+#endif
+
 #ifdef STARSSEAPLATFORMWINDOWS
 	#include <Windows.h>
 #endif
