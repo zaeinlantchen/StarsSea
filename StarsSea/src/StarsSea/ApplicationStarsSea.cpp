@@ -20,6 +20,10 @@ namespace StarsSea{
 		starseaInstance = this;
 		starsseaWindow = std::unique_ptr<Window>(Window::Create());
 		starsseaWindow->SetEventCallback(BINDEVENTFN(OnEvent));
+
+		/*starsSeaImGuiLayer = std::make_unique<StarsSeaImGuiLayer>();*/
+		starsSeaImGuiLayer = new StarsSeaImGuiLayer();
+		PushOverlay(starsSeaImGuiLayer);
 	}
 	ApplicationStarsSea::~ApplicationStarsSea()
 	{
@@ -61,9 +65,14 @@ namespace StarsSea{
 			for (Layer* layer : starseaLayerStack) {
 				layer->OnUpdate();
 			}
+			starsSeaImGuiLayer->Begin();
+			for (Layer* layer : starseaLayerStack) {
+				layer->OnImGuiRender();
+			}
+			starsSeaImGuiLayer->End();
 			//auto [x, y] = StarsSeaInput::GetMousePosition();
 			//STARSEACORETRACE("{0}, {1}", x, y);
-
+			
 			starsseaWindow->OnUpdate();
 		};
 	}

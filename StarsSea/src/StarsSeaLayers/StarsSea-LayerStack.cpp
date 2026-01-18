@@ -4,7 +4,7 @@
 namespace StarsSea {
 	LayerStack::LayerStack()
 	{
-		starseaLayerInsert = starseaLayers.begin();
+
 	}
 	LayerStack::~LayerStack()
 	{
@@ -13,7 +13,8 @@ namespace StarsSea {
 	}
 	void LayerStack::PushLayer(Layer* layer)
 	{
-		starseaLayerInsert = starseaLayers.emplace(starseaLayerInsert, layer);
+		starseaLayers.emplace(starseaLayers.begin() + starseaLayerInsertIndex, layer);
+		starseaLayerInsertIndex++;
 	}
 	void LayerStack::PushOverlay(Layer* overlay)
 	{
@@ -24,7 +25,7 @@ namespace StarsSea {
 		auto it = std::find(starseaLayers.begin(), starseaLayers.end(), layer);
 		if (it != starseaLayers.end()) {
 			starseaLayers.erase(it);
-			starseaLayerInsert--;
+			starseaLayerInsertIndex--;
 		}
 			
 	}

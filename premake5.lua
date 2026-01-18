@@ -17,6 +17,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "StarsSea/utils/GLFW/include"
 IncludeDir["Glad"] = "StarsSea/utils/Glad/include"
 IncludeDir["ImGui"] = "StarsSea/utils/imgui"
+IncludeDir["glm"] = "StarsSea/utils/glm"
 
 include "StarsSea/utils/GLFW/premake5.lua"
 include "StarsSea/utils/Glad/premake5.lua"
@@ -32,7 +33,9 @@ project "StarsSea"
 
 	files{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/utils/glm/glm/**.hpp",
+		"%{prj.name}/utils/glm/glm/**.inl"
 	}
 
 	includedirs{
@@ -40,7 +43,8 @@ project "StarsSea"
 		"%{prj.name}/utils/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links{
@@ -93,7 +97,8 @@ project "StarsSea-Sandbox"
 
 		includedirs{
 			"StarsSea/utils/spdlog/include",
-			"StarsSea/src"
+			"StarsSea/src",
+			"%{IncludeDir.glm}"
 		}
 
 		links{

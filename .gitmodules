@@ -1,3 +1,6 @@
 [submodule "StarsSea/utils/imgui"]
 	path = StarsSea/utils/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "StarsSea/utils/glm"]
+	path = StarsSea/utils/glm
+	url = https://github.com/g-truc/glm

@@ -9,6 +9,8 @@
 #include "../StarsSeaEvents/StarsSea-Event.h"
 #include "../StarsSeaEvents/ApplicationEvent.h"
 
+#include "../ImGui/StarsSea-ImGuiLayer.h"
+
 
 namespace StarsSea{
 
@@ -31,6 +33,7 @@ namespace StarsSea{
 		private:
 			bool OnWindowClose(WindowCloseEvent& e);
 			std::unique_ptr<class Window> starsseaWindow;
+			StarsSeaImGuiLayer* starsSeaImGuiLayer;
 			bool starsseaRunning = true;
 			LayerStack starseaLayerStack;
 		private:

@@ -1,13 +1,10 @@
 #include <StarsSea.h>
 
-#include "StarsSea/StarsSea-EntryPoint.h"
-
 class ExampleLayer : public StarsSea::Layer
 {
 public:
 	ExampleLayer() 
 		: StarsSea::Layer("示例层") {
-
 	}
 	
 	void OnUpdate() override {
@@ -32,7 +29,6 @@ class StarsSeaSandbox : public StarsSea::ApplicationStarsSea
 public:
 	StarsSeaSandbox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new StarsSea::StarsSeaImGuiLayer());
 	}
 	~StarsSeaSandbox() {
 

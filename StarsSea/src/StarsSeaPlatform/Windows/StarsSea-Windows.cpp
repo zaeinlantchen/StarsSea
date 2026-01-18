@@ -1,10 +1,12 @@
+#include <glad/glad.h>
 #include "StarsSea-Windows.h"
 #include "../../StarsSea/Log.h"
 
 #include "../../StarsSeaEvents/ApplicationEvent.h"
 #include "../../StarsSeaEvents/StarsSea-MouseEvent.h"
 #include "../../StarsSeaEvents/StarsSea-KeyEvent.h"
-#include <glad/glad.h>
+
+
 
 namespace StarsSea{
 	
