@@ -4,8 +4,8 @@ project "Glad"
 	staticruntime "Off"
 	warnings "off"
 
-	targetdir ("bin/" .. "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}" .. "/%{prj.name}")
-	objdir ("bin-int/" .. "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}" .. "/%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
@@ -24,4 +24,9 @@ project "Glad"
 		staticruntime "On"
 
 	filter "configurations:Debug"
-		buildoptions "/MT"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		runtime "Release"
+		optimize "on"

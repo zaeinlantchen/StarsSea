@@ -25,9 +25,6 @@
     <Filter Include="src\StarsSeaPlatform">
       <UniqueIdentifier>{07E50211-F373-8CDA-9C92-A0D588009D80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\StarsSeaPlatform\OpenGL">
-      <UniqueIdentifier>{5BC058D6-C7CD-86BC-50B4-82A7BCC05273}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\StarsSeaPlatform\Windows">
       <UniqueIdentifier>{41A68CF9-2D61-7CA5-D618-F5EFC2B2C635}</UniqueIdentifier>
     </Filter>
@@ -1368,8 +1365,13 @@
     <ClInclude Include="utils\glm\glm\vector_relational.hpp">
       <Filter>utils\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\StarsSea-Renderer\StarsSeaGraphicsContext.h" />
+    <ClInclude Include="src\StarsSeaPlatform\OpenGL\StarsSea-OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ImGui\StarsSea-ImGuiBuild.cpp">
+      <Filter>src\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\ImGui\StarsSea-ImGuiLayer.cpp">
       <Filter>src\ImGui</Filter>
     </ClCompile>
@@ -1394,6 +1396,6 @@
     <ClCompile Include="src\StarsSeaPlatform\Windows\StarsSea-Windows.cpp">
       <Filter>src\StarsSeaPlatform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImGui\StarsSea-ImGuiBuild.cpp" />
+    <ClCompile Include="src\StarsSeaPlatform\OpenGL\StarsSea-OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

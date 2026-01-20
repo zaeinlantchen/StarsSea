@@ -2,12 +2,17 @@
 
 #include "../StarsSea-pch.h"
 
+
 #ifdef STARSSEAPLATFORMWINDOWS
+#if STARSSEADYNAMICLINK
 	#ifdef STARSSEABUILDDLL
 		#define STARSSEAAPI __declspec(dllexport)
 	#else
 		#define STARSSEAAPI __declspec(dllimport)
 	#endif
+#else
+	#define STARSSEAAPI
+#endif
 #else
 	#error StarsSea only supports Windows!
 #endif

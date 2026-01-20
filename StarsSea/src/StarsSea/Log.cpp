@@ -18,7 +18,7 @@ namespace StarsSea
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 		CoreLogger = spdlog::stdout_color_mt("星海核心");
 		CoreLogger->set_level(spdlog::level::trace);
-		ClientLogger = spdlog::stdout_color_mt("星海程序");
+		ClientLogger = spdlog::stdout_color_mt("星海核心-执行");
 		ClientLogger->set_level(spdlog::level::trace);
 	}
 }

@@ -21,7 +21,7 @@ namespace StarsSea
 	};
 }
 
-// Core log macros
+// 核心日志宏
 
 #define STARSEACOREERROR(...)    ::StarsSea::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define STARSEACOREINFO(...)     ::StarsSea::Log::GetCoreLogger()->info(__VA_ARGS__)
@@ -29,7 +29,7 @@ namespace StarsSea
 #define STARSEACORETRACE(...)    ::StarsSea::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define STARSEACOREFATAL(...)    ::StarsSea::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
-// Client log macros
+// 客户端日志宏
 
 #define STARSEAERROR(...)         ::StarsSea::Log::GetClientLogger()->error(__VA_ARGS__)
 #define STARSEAINFO(...)          ::StarsSea::Log::GetClientLogger()->info(__VA_ARGS__)

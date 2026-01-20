@@ -70,8 +70,8 @@ namespace StarsSea{
 				layer->OnImGuiRender();
 			}
 			starsSeaImGuiLayer->End();
-			//auto [x, y] = StarsSeaInput::GetMousePosition();
-			//STARSEACORETRACE("{0}, {1}", x, y);
+			auto [x, y] = StarsSeaInput::GetMousePosition();
+			STARSEACORETRACE("{0}, {1}", x, y);
 			
 			starsseaWindow->OnUpdate();
 		};

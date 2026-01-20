@@ -35,37 +35,37 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
@@ -93,106 +93,102 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)..\bin\Debug-windows-x86_64\StarsSea\</OutDir>
     <IntDir>$(ProjectDir)..\bin-int\Debug-windows-x86_64\StarsSea\</IntDir>
     <TargetName>StarsSea</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)..\bin\Debug-windows-x86\StarsSea\</OutDir>
     <IntDir>$(ProjectDir)..\bin-int\Debug-windows-x86\StarsSea\</IntDir>
     <TargetName>StarsSea</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)..\bin\Release-windows-x86_64\StarsSea\</OutDir>
     <IntDir>$(ProjectDir)..\bin-int\Release-windows-x86_64\StarsSea\</IntDir>
     <TargetName>StarsSea</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)..\bin\Release-windows-x86\StarsSea\</OutDir>
     <IntDir>$(ProjectDir)..\bin-int\Release-windows-x86\StarsSea\</IntDir>
     <TargetName>StarsSea</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)..\bin\Dist-windows-x86_64\StarsSea\</OutDir>
     <IntDir>$(ProjectDir)..\bin-int\Dist-windows-x86_64\StarsSea\</IntDir>
     <TargetName>StarsSea</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)..\bin\Dist-windows-x86\StarsSea\</OutDir>
     <IntDir>$(ProjectDir)..\bin-int\Dist-windows-x86\StarsSea\</IntDir>
     <TargetName>StarsSea</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;utils\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Debug-windows-x86_64\StarsSea\StarsSea.lib</ImportLibrary>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\StarsSea\StarsSea.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\StarsSea\StarsSea.dll ..\bin\Debug-windows-x86_64\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\StarsSea\StarsSea.dll ..\bin\Debug-windows-x86_64\StarsSea-Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\StarsSea\StarsSea.lib\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\StarsSea\StarsSea.lib ..\bin\Debug-windows-x86_64\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\StarsSea\StarsSea.lib ..\bin\Debug-windows-x86_64\StarsSea-Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;utils\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Debug-windows-x86\StarsSea\StarsSea.lib</ImportLibrary>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86\StarsSea\StarsSea.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86\StarsSea\StarsSea.dll ..\bin\Debug-windows-x86\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86\StarsSea\StarsSea.dll ..\bin\Debug-windows-x86\StarsSea-Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86\StarsSea\StarsSea.lib\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86\StarsSea\StarsSea.lib ..\bin\Debug-windows-x86\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86\StarsSea\StarsSea.lib ..\bin\Debug-windows-x86\StarsSea-Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEARELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEARELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;utils\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -200,26 +196,27 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Release-windows-x86_64\StarsSea\StarsSea.lib</ImportLibrary>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\StarsSea\StarsSea.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\StarsSea\StarsSea.dll ..\bin\Release-windows-x86_64\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\StarsSea\StarsSea.dll ..\bin\Release-windows-x86_64\StarsSea-Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\StarsSea\StarsSea.lib\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\StarsSea\StarsSea.lib ..\bin\Release-windows-x86_64\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\StarsSea\StarsSea.lib ..\bin\Release-windows-x86_64\StarsSea-Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEARELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEARELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;utils\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -227,26 +224,27 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Release-windows-x86\StarsSea\StarsSea.lib</ImportLibrary>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86\StarsSea\StarsSea.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86\StarsSea\StarsSea.dll ..\bin\Release-windows-x86\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86\StarsSea\StarsSea.dll ..\bin\Release-windows-x86\StarsSea-Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86\StarsSea\StarsSea.lib\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86\StarsSea\StarsSea.lib ..\bin\Release-windows-x86\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86\StarsSea\StarsSea.lib ..\bin\Release-windows-x86\StarsSea-Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;utils\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -254,26 +252,27 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Dist-windows-x86_64\StarsSea\StarsSea.lib</ImportLibrary>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\StarsSea\StarsSea.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\StarsSea\StarsSea.dll ..\bin\Dist-windows-x86_64\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\StarsSea\StarsSea.dll ..\bin\Dist-windows-x86_64\StarsSea-Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\StarsSea\StarsSea.lib\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\StarsSea\StarsSea.lib ..\bin\Dist-windows-x86_64\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\StarsSea\StarsSea.lib ..\bin\Dist-windows-x86_64\StarsSea-Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STARSSEAPLATFORMWINDOWS;STARSSEABUILDDLL;GLFW_INCLUDE_NONE;STARSSEADIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;utils\spdlog\include;utils\GLFW\include;utils\Glad\include;utils\imgui;utils\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 /wd26495 /wd26812 /MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /wd26495 /wd26812 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -281,11 +280,12 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Dist-windows-x86\StarsSea\StarsSea.lib</ImportLibrary>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86\StarsSea\StarsSea.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86\StarsSea\StarsSea.dll ..\bin\Dist-windows-x86\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86\StarsSea\StarsSea.dll ..\bin\Dist-windows-x86\StarsSea-Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86\StarsSea\StarsSea.lib\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86\StarsSea\StarsSea.lib ..\bin\Dist-windows-x86\StarsSea-Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86\StarsSea\StarsSea.lib ..\bin\Dist-windows-x86\StarsSea-Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -294,7 +294,9 @@
     <ClInclude Include="src\StarsSea-KeyCode\StarsSea-KeyCode.h" />
     <ClInclude Include="src\StarsSea-KeyCode\StarsSea-MouseButtonCode.h" />
     <ClInclude Include="src\StarsSea-pch.h" />
+    <ClInclude Include="src\StarsSea-Renderer\StarsSeaGraphicsContext.h" />
     <ClInclude Include="src\StarsSea.h" />
+    <ClInclude Include="src\StarsSeaPlatform\OpenGL\StarsSea-OpenGLContext.h" />
     <ClInclude Include="src\StarsSea\ApplicationStarsSea.h" />
     <ClInclude Include="src\StarsSea\Log.h" />
     <ClInclude Include="src\StarsSea\StarSea-Core.h" />
@@ -732,6 +734,7 @@
     <ClCompile Include="src\ImGui\StarsSea-ImGuiBuild.cpp" />
     <ClCompile Include="src\ImGui\StarsSea-ImGuiLayer.cpp" />
     <ClCompile Include="src\StarsSea-pch.cpp" />
+    <ClCompile Include="src\StarsSeaPlatform\OpenGL\StarsSea-OpenGLContext.cpp" />
     <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp" />
     <ClCompile Include="src\StarsSea\Log.cpp" />
     <ClCompile Include="src\StarsSeaLayers\StarsSea-Layer.cpp" />

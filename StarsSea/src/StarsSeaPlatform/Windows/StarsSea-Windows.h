@@ -4,6 +4,8 @@
 
 #include "../../StarsSea/StarsSea-Window.h"
 
+#include "../../StarsSea-Renderer/StarsSeaGraphicsContext.h"
+
 #include <GLFW/glfw3.h>
 
 namespace StarsSea{
@@ -31,6 +33,8 @@ namespace StarsSea{
 			virtual void Shutdown();
 		private:
 			GLFWwindow* StarsSeaWindow;
+
+			GraphicsContext* starsseaContext;
 
 			struct StarsSeaWindowData
 			{

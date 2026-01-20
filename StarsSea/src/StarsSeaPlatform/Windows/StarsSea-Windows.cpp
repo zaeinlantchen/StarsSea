@@ -1,4 +1,3 @@
-#include <glad/glad.h>
 #include "StarsSea-Windows.h"
 #include "../../StarsSea/Log.h"
 
@@ -6,7 +5,7 @@
 #include "../../StarsSeaEvents/StarsSea-MouseEvent.h"
 #include "../../StarsSeaEvents/StarsSea-KeyEvent.h"
 
-
+#include "../OpenGL/StarsSea-OpenGLContext.h"
 
 namespace StarsSea{
 	
@@ -49,9 +48,10 @@ namespace StarsSea{
 		}
 
 		StarsSeaWindow = glfwCreateWindow((int)props.Width, (int)props.Height, starsseaData.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(StarsSeaWindow);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		STARSEACOREASSERT(status, "GLAD 初始化失败!");
+
+		starsseaContext = new OpenGLContext(StarsSeaWindow);
+		starsseaContext->Init();
+
 		glfwSetWindowUserPointer(StarsSeaWindow, &starsseaData);
 		SetVSync(true);
 
@@ -142,6 +142,7 @@ namespace StarsSea{
 	void StarsSeaWindows::OnUpdate()
 	{
 		glfwPollEvents();
+		starsseaContext->SwapBuffers();
 		glfwSwapBuffers(StarsSeaWindow);
 	}
 

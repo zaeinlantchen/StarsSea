@@ -25,8 +25,10 @@ include "StarsSea/utils/imgui/premake5.lua"
 
 project "StarsSea"
 	location "StarsSea"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -36,6 +38,10 @@ project "StarsSea"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/utils/glm/glm/**.hpp",
 		"%{prj.name}/utils/glm/glm/**.inl"
+	}
+
+	defines{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs{
@@ -55,8 +61,6 @@ project "StarsSea"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "Off"
 		systemversion "latest"
 		buildoptions { "/utf-8", "/wd26495", "/wd26812" }
 
@@ -66,26 +70,28 @@ project "StarsSea"
 			"GLFW_INCLUDE_NONE"
 		}
 
-	postbuildcommands{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/StarsSea-Sandbox")
-		}
-	filter "configurations:Debug"
-		defines "STARSSEADEBUG"
-		buildoptions "/MDd"
-		symbols "On"
-	filter "configurations:Release"
-		defines "STARSSEARELEASE"
-		buildoptions "/MD"
-		optimize "On"
-	filter "configurations:Dist"
-		defines "STARSSEADIST"
-		buildoptions "/MD"
-		optimize "On"
+		postbuildcommands{
+				("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/StarsSea-Sandbox")
+			}
+		filter "configurations:Debug"
+			defines "STARSSEADEBUG"
+			runtime "Debug"
+			symbols "On"
+		filter "configurations:Release"
+			defines "STARSSEARELEASE"
+			runtime "Release"
+			optimize "On"
+		filter "configurations:Dist"
+			defines "STARSSEADIST"
+			runtime "Release"
+			optimize "On"
 
 project "StarsSea-Sandbox"
 	location "StarsSea-Sandbox"
 		kind "ConsoleApp"
 		language "C++"
+		cppdialect "C++17"
+		staticruntime "on"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -98,6 +104,7 @@ project "StarsSea-Sandbox"
 		includedirs{
 			"StarsSea/utils/spdlog/include",
 			"StarsSea/src",
+			"StarsSea/utils",
 			"%{IncludeDir.glm}"
 		}
 
@@ -106,22 +113,25 @@ project "StarsSea-Sandbox"
 		}
 
 		filter "system:windows"
-			cppdialect "C++17"
-			staticruntime "Off"
-			systemversion "latest"
-			buildoptions { "/utf-8", "/wd26495", "/wd26812" }
-			defines{
+		systemversion "latest"
+
+		buildoptions { "/utf-8", "/wd26495", "/wd26812" }
+
+		defines{
 				"STARSSEAPLATFORMWINDOWS"
-			}
+		}
 
 		filter "configurations:Debug"
 			defines "STARSSEADEBUG"
-			symbols "On"
+			runtime "Debug"
+			symbols "on"
 
 		filter "configurations:Release"
 			defines "STARSSEARELEASE"
-			optimize "On"
+			runtime "Release"
+			optimize "on"
 
 		filter "configurations:Dist"
 			defines "STARSSEADIST"
-			optimize "On"
+			runtime "Release"
+			optimize "on"

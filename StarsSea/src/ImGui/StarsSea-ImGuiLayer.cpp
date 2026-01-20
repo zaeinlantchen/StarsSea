@@ -10,6 +10,7 @@
 
 #include "../StarsSea/ApplicationStarsSea.h"
 
+#include <commdlg.h>
 
 #include <GLFW/glfw3.h>
 
@@ -48,6 +49,28 @@ namespace StarsSea
 			StarsSeaStyle.Colors[ImGuiCol_WindowBg].w = 1.0f;
 		}
 
+		ImFontAtlas* fontAtlas = starseaio.Fonts;
+		ImFontConfig fontConfig;
+		fontConfig.OversampleH = 2;
+		fontConfig.OversampleV = 2;
+		fontConfig.PixelSnapH = true;
+
+		char systemFontPath[MAX_PATH];
+		GetWindowsDirectoryA(systemFontPath, MAX_PATH);
+		strcat_s(systemFontPath, "\\Fonts\\msyh.ttc");
+		
+		ImFont* chineseFont = fontAtlas->AddFontFromFileTTF(systemFontPath, 18.0f, &fontConfig, fontAtlas->GetGlyphRangesChineseFull());
+		if (chineseFont) {
+			starseaio.FontDefault = chineseFont;
+		} else {
+			GetWindowsDirectoryA(systemFontPath, MAX_PATH);
+			strcat_s(systemFontPath, "\\Fonts\\msyhbd.ttc");
+			chineseFont = fontAtlas->AddFontFromFileTTF(systemFontPath, 18.0f, &fontConfig, fontAtlas->GetGlyphRangesChineseFull());
+			if (chineseFont) {
+				starseaio.FontDefault = chineseFont;
+			}
+		}
+
 		ApplicationStarsSea& StarsSeaApp = ApplicationStarsSea::Get();
 		GLFWwindow* starseawindow = static_cast<GLFWwindow*>(StarsSeaApp.GetWindow().GetNativeWindow());
 
@@ -73,7 +96,7 @@ namespace StarsSea
 	void StarsSeaImGuiLayer::End() {
 		ImGuiIO& starseaio = ImGui::GetIO();
 		ApplicationStarsSea& StarsSeaApp = ApplicationStarsSea::Get();
-		starseaio.DisplaySize = ImVec2(StarsSeaApp.GetWindow().GetWidth(), StarsSeaApp.GetWindow().GetHeight());
+		starseaio.DisplaySize = ImVec2((float)StarsSeaApp.GetWindow().GetWidth(), (float)StarsSeaApp.GetWindow().GetHeight());
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
