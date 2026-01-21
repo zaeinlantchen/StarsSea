@@ -36,6 +36,9 @@ namespace StarsSea{
 			StarsSeaImGuiLayer* starsSeaImGuiLayer;
 			bool starsseaRunning = true;
 			LayerStack starseaLayerStack;
+
+			unsigned int starsseaVertexArray, starsseaVertexBuffer, starsseaIndexBuffer;
+
 		private:
 			static ApplicationStarsSea* starseaInstance;
 	};

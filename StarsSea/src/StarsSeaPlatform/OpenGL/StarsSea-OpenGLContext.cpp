@@ -9,13 +9,19 @@ namespace StarsSea {
 	OpenGLContext::OpenGLContext(GLFWwindow* starsseaWindow)
 		: StarsSeaWindow(starsseaWindow)
 	{
-		STARSEACOREASSERT(StarsSeaWindow, "¥∞ø⁄æ‰±˙Œﬁ–ß!");
+		STARSEACOREASSERT(StarsSeaWindow, "Á™óÂè£Âè•ÊüÑ‰∏∫Á©∫ÔºÅ");
 	}
 	void OpenGLContext::Init()
 	{
 		glfwMakeContextCurrent(StarsSeaWindow);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		STARSEACOREASSERT(status, "GLAD ≥ı ºªØ ß∞‹!");
+		STARSEACOREASSERT(status, "GLAD ÂàùÂßãÂåñÂ§±Ë¥•");
+
+		STARSEACOREINFO("OpenGL ‰ø°ÊÅØÔºö");
+		STARSEACOREINFO("OpenGL Vendor: {0}", (const char*)glGetString(GL_VENDOR));
+		STARSEACOREINFO("OpenGL Renderer: {0}", (const char*)glGetString(GL_RENDERER));
+		STARSEACOREINFO("OpenGL Version: {0}", (const char*)glGetString(GL_VERSION));
+
 	}
 	void OpenGLContext::SwapBuffers()
 	{

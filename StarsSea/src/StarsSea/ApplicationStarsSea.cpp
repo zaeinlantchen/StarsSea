@@ -24,6 +24,35 @@ namespace StarsSea{
 		/*starsSeaImGuiLayer = std::make_unique<StarsSeaImGuiLayer>();*/
 		starsSeaImGuiLayer = new StarsSeaImGuiLayer();
 		PushOverlay(starsSeaImGuiLayer);
+
+		glGenVertexArrays(1, &starsseaVertexArray);
+		glBindVertexArray(starsseaVertexArray);
+
+		glGenBuffers(1, &starsseaVertexBuffer);
+		glBindBuffer(GL_ARRAY_BUFFER, starsseaVertexBuffer);
+
+		float vertices[] = {
+			-0.5f, -0.5f, 0.0f, // 0
+			 0.5f, -0.5f, 0.0f, // 1
+			 0.0f,  0.5f, 0.0f, // 2
+		};
+
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+
+		glGenBuffers(1, &starsseaIndexBuffer);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, starsseaIndexBuffer);
+
+		unsigned int indices[] = {
+			0, 1, 2
+		};
+
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+
+
 	}
 	ApplicationStarsSea::~ApplicationStarsSea()
 	{
@@ -59,8 +88,11 @@ namespace StarsSea{
 	void ApplicationStarsSea::Run()
 	{
 		while (starsseaRunning) {
-			glClearColor(1, 0, 1, 1);
+			glClearColor(0.1f, 0.1f, 0.1f, 0.1f);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			glBindVertexArray(starsseaVertexArray);
+			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : starseaLayerStack) {
 				layer->OnUpdate();
@@ -70,8 +102,8 @@ namespace StarsSea{
 				layer->OnImGuiRender();
 			}
 			starsSeaImGuiLayer->End();
-			auto [x, y] = StarsSeaInput::GetMousePosition();
-			STARSEACORETRACE("{0}, {1}", x, y);
+			/*auto [x, y] = StarsSeaInput::GetMousePosition();
+			STARSEACORETRACE("{0}, {1}", x, y);*/
 			
 			starsseaWindow->OnUpdate();
 		};
