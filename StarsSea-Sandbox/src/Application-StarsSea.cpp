@@ -15,9 +15,7 @@ public:
 	}
 
 	void OnImGuiRender() override {
-		ImGui::Begin("示例窗口");
-		ImGui::Text("这是一些示例文本！");
-		ImGui::End();
+
 	}
 
 	void OnEvent(StarsSea::Event& event) override {

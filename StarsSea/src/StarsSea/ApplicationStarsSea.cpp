@@ -51,7 +51,30 @@ namespace StarsSea{
 
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+		std::string vertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 starseaPosition;
+			out vec3 vstarseaPosition; 
+			void main()
+			{
+				vstarseaPosition = starseaPosition;
+				gl_Position = vec4(starseaPosition, 1.0);
+			}
+		)";
 
+		std::string fragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+			in vec3 vstarseaPosition;
+			void main()
+			{
+				color = vec4(vstarseaPosition * 0.5 + 0.5, 0.5);
+			}
+		)";
+
+		starseaShader.reset(new StarsSeaShader(vertexSrc, fragmentSrc));
 
 	}
 	ApplicationStarsSea::~ApplicationStarsSea()
@@ -90,6 +113,8 @@ namespace StarsSea{
 		while (starsseaRunning) {
 			glClearColor(0.1f, 0.1f, 0.1f, 0.1f);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			starseaShader->Bind();
 
 			glBindVertexArray(starsseaVertexArray);
 			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);

@@ -18,9 +18,9 @@ namespace StarsSea {
 		STARSEACOREASSERT(status, "GLAD 初始化失败");
 
 		STARSEACOREINFO("OpenGL 信息：");
-		STARSEACOREINFO("OpenGL Vendor: {0}", (const char*)glGetString(GL_VENDOR));
-		STARSEACOREINFO("OpenGL Renderer: {0}", (const char*)glGetString(GL_RENDERER));
-		STARSEACOREINFO("OpenGL Version: {0}", (const char*)glGetString(GL_VERSION));
+		STARSEACOREINFO("OpenGL 渲染供应商: {0}", (const char*)glGetString(GL_VENDOR));
+		STARSEACOREINFO("OpenGL 渲染核心名: {0}", (const char*)glGetString(GL_RENDERER));
+		STARSEACOREINFO("OpenGL 渲染版本号: {0}", (const char*)glGetString(GL_VERSION));
 
 	}
 	void OpenGLContext::SwapBuffers()

@@ -11,6 +11,8 @@
 
 #include "../ImGui/StarsSea-ImGuiLayer.h"
 
+#include "../StarsSea-Renderer/StarsSeaShader.h"
+
 
 namespace StarsSea{
 
@@ -38,6 +40,8 @@ namespace StarsSea{
 			LayerStack starseaLayerStack;
 
 			unsigned int starsseaVertexArray, starsseaVertexBuffer, starsseaIndexBuffer;
+
+			std::unique_ptr<StarsSeaShader> starseaShader;
 
 		private:
 			static ApplicationStarsSea* starseaInstance;

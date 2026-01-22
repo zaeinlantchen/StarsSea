@@ -295,6 +295,7 @@
     <ClInclude Include="src\StarsSea-KeyCode\StarsSea-MouseButtonCode.h" />
     <ClInclude Include="src\StarsSea-pch.h" />
     <ClInclude Include="src\StarsSea-Renderer\StarsSeaGraphicsContext.h" />
+    <ClInclude Include="src\StarsSea-Renderer\StarsSeaShader.h" />
     <ClInclude Include="src\StarsSea.h" />
     <ClInclude Include="src\StarsSeaPlatform\OpenGL\StarsSea-OpenGLContext.h" />
     <ClInclude Include="src\StarsSea\ApplicationStarsSea.h" />
@@ -734,6 +735,7 @@
     <ClCompile Include="src\ImGui\StarsSea-ImGuiBuild.cpp" />
     <ClCompile Include="src\ImGui\StarsSea-ImGuiLayer.cpp" />
     <ClCompile Include="src\StarsSea-pch.cpp" />
+    <ClCompile Include="src\StarsSea-Renderer\StarsSeaShader.cpp" />
     <ClCompile Include="src\StarsSeaPlatform\OpenGL\StarsSea-OpenGLContext.cpp" />
     <ClCompile Include="src\StarsSea\ApplicationStarsSea.cpp" />
     <ClCompile Include="src\StarsSea\Log.cpp" />
